@@ -12,5 +12,10 @@ button { background:var(--accent); border:0; padding:0.4rem 0.8rem; border-radiu
 table { width:100%; border-collapse:collapse; }
 th,td { border-bottom:1px solid #443820; padding:0.35rem; }
 .hero-num { font-size:2rem; color:var(--accent); font-weight:700; }
+.err { color:#ff7a6b; }
+.muted { color:var(--muted); font-size:0.9rem; }
+.badge { display:inline-block; padding:0.1rem 0.5rem; border:1px solid var(--accent); border-radius:999px; color:var(--accent); font-size:0.85rem; margin-left:0.5rem; }
+button.ghost { background:transparent; border:1px solid var(--muted); color:var(--text); margin-left:0.5rem; }
+label { display:flex; align-items:center; gap:0.4rem; margin:0.3rem 0; }
 input { background:#120e06; border:1px solid var(--muted); color:var(--text); padding:0.3rem; }
 a { color: var(--accent); }

@@ -8,6 +8,7 @@ def init_db():
     conn = connect()
     conn.executescript("""
     CREATE TABLE IF NOT EXISTS tariff(id INTEGER PRIMARY KEY, start_price REAL, start_include_km REAL, per_km REAL, per_slow_min REAL, night_factor REAL);
+    CREATE TABLE IF NOT EXISTS scheduled_tariff(id INTEGER PRIMARY KEY CHECK (id = 1), effective_date TEXT NOT NULL, start_price REAL NOT NULL, start_include_km REAL NOT NULL, per_km REAL NOT NULL, per_slow_min REAL NOT NULL, night_factor REAL NOT NULL);
     CREATE TABLE IF NOT EXISTS trips(id INTEGER PRIMARY KEY, label TEXT, distance_km REAL, slow_min REAL, night INTEGER);
     CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY, value TEXT);
     CREATE TABLE IF NOT EXISTS calc_runs(id INTEGER PRIMARY KEY, kind TEXT, trip_id INTEGER, input_json TEXT, result_json TEXT, created_at TEXT);
