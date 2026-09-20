@@ -1,3 +1,5 @@
+from datetime import date
+
 from pydantic import BaseModel, Field
 
 class FareRequest(BaseModel):
@@ -6,6 +8,7 @@ class FareRequest(BaseModel):
     night: bool = False
     trip_id: int | None = None
     persist: bool = True
+    service_date: date | None = None
 
 class CompareRequest(BaseModel):
     distance_km: float = Field(ge=0)
